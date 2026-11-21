@@ -315,27 +315,11 @@ print("\nList of Outlier Observations:")
 print(outliers[['Date', 'City', 'PM2.5', 'PM10', 'Temperature', 'Air_Quality_Category']].to_string(index=False))
 
 
-# ==============================================================================
-# TASK 13: COMPARE TEMPERATURE AND PM2.5 USING CORRELATION
-# ==============================================================================
-# Pearson correlation coefficient ranges from -1.0 to +1.0.
-# A negative correlation indicates that when temperature drops (e.g. winter),
-# PM2.5 levels rise (due to thermal inversion trapping pollutants).
-print("\n--- TASK 13: TEMPERATURE VS PM2.5 CORRELATION ---")
-corr_value = df['PM2.5'].corr(df['Temperature'])
-print(f"Pearson Correlation Coefficient (PM2.5 vs Temperature): {corr_value:.4f}")
 
-if corr_value < 0:
-    print("Interpretation: Moderate to strong NEGATIVE correlation. As temperature decreases,")
-    print("PM2.5 concentration significantly increases due to atmospheric temperature inversion.")
-elif corr_value > 0:
-    print("Interpretation: Positive correlation between Temperature and PM2.5.")
-else:
-    print("Interpretation: No linear correlation detected.")
 
 
 # ==============================================================================
-# TASK 14: FIND PROPORTION OF OBSERVATIONS ABOVE A CHOSEN PM2.5 THRESHOLD
+# TASK 13: FIND PROPORTION OF OBSERVATIONS ABOVE A CHOSEN PM2.5 THRESHOLD
 # ==============================================================================
 # Chosen Threshold: 60.0 µg/m³
 # Rationale: 60 µg/m³ is the National Ambient Air Quality Standard (NAAQS)
@@ -360,7 +344,7 @@ print(city_unsafe.sort_values(by='Percentage_Above_Safe_Limit', ascending=False)
 
 
 # ==============================================================================
-# TASK 15: FIVE DATA-SUPPORTED PUBLIC-AWARENESS RECOMMENDATIONS
+# TASK 14: FIVE DATA-SUPPORTED PUBLIC-AWARENESS RECOMMENDATIONS
 # ==============================================================================
 print("\n" + "=" * 80)
 print("TASK 15: FIVE DATA-SUPPORTED PUBLIC-AWARENESS RECOMMENDATIONS")
